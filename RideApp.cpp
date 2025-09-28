@@ -110,21 +110,21 @@ int main()
 
         //ride time choices
         cout << "\nSelect Pickup Time:\n";
-        cout << "1. 7AM\n";
-        cout << "2. 8AM\n";
-        cout << "3. 9AM\n";
+        cout << "1. 7AM     ";
+        cout << "2. 8AM     ";
+        cout << "3. 9AM     ";
         cout << "4. 10AM\n";
-        cout << "5. 11AM\n";
-        cout << "6. 12PM\n";
-        cout << "7. 1PM\n";
+        cout << "5. 11AM    ";
+        cout << "6. 12PM    ";
+        cout << "7. 1PM     ";
         cout << "8. 2PM\n";
-        cout << "9. 3PM\n";
-        cout << "10. 4PM\n";
-        cout << "11. 5PM\n";
+        cout << "9. 3PM     ";
+        cout << "10. 4PM    ";
+        cout << "11. 5PM    ";
         cout << "12. 6PM\n";
-        cout << "13. 7PM\n";
-        cout << "14. 8PM\n";
-        cout << "15. 9PM\n";
+        cout << "13. 7PM    ";
+        cout << "14. 8PM    ";
+        cout << "15. 9PM    ";
         cout << "16. 10PM\n";
         cout << "Enter choice (1-2): ";
         cin >> timeChoice;
