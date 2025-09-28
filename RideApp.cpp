@@ -51,5 +51,18 @@ int main()
             return 0;
         }
 
+        //calculate fare based on ride type
+        switch (rideChoice) {
+            case 1: //RideCar
+                fare = BASE_FARE_CAR + (RATE_PER_KM_CAR * distance);
+                break;
+            case 2: //RidePremium
+                fare = BASE_FARE_PREMIUM + (RATE_PER_KM_PREMIUM * distance);
+                break;
+            default:
+                cout << "\nInvalid ride type selected!\n";
+                return 0;
+        }
+
 }
 
