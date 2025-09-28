@@ -5,7 +5,20 @@ using namespace std;
 int main() 
 {
     string name, pickupLocation, dropoffLocation;
-    
+    int rideChoice, menuChoice;
+    double distance, fare;
+
+    //base fare and per km rates for different ride types
+    const double BASE_FARE_CAR = 5.0;
+    const double RATE_PER_KM_CAR = 2.0;
+
+    const double BASE_FARE_PREMIUM = 10.0;
+    const double RATE_PER_KM_PREMIUM = 3.5;
+
+    cout << "======================================\n";
+    cout << "   Ride E-Hailing App\n";
+    cout << "======================================\n\n";
+
     do {
         cin.ignore();
 
@@ -20,6 +33,23 @@ int main()
         //input drop-off location
         cout << "Enter Drop-off Location: ";
         getline(cin, dropoffLocation);
+
+        //ride type choices
+        cout << "\nSelect Ride Type:\n";
+        cout << "1. RideCar (Base RM5 + RM2/km)\n";
+        cout << "2. RidePremium (Base RM10 + RM3.5/km)\n";
+        cout << "Enter choice (1-2): ";
+        cin >> rideChoice;
+
+        //input distance
+        cout << "Enter distance of trip (in km): ";
+        cin >> distance;
+
+        //validate distance
+        if (distance <= 0) {
+            cout << "\nInvalid distance entered!\n";
+            return 0;
+        }
 
 }
 
