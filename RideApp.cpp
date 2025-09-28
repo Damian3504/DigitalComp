@@ -74,5 +74,16 @@ int main()
         cout << "Total Fare       : RM " << fare << endl;
         cout << "===============================\n";
 
+        //options after booking
+        cout << "\nWhat would you like to do next?\n";
+        cout << "1. Go back to booking\n";
+        cout << "2. Exit\n";
+        cout << "Enter choice: ";
+        cin >> menuChoice;
+
+    } while (menuChoice == 1);
+
+    cout << "\nThank you for using Ride E-Hailing App!\n";
+    return 0;
 }
 
