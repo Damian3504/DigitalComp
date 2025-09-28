@@ -77,8 +77,14 @@ int main()
             case 1 ... 3: //morningpeakhours
                 timeFare = 1;
                 break;
-            case 4 ... 10:
+            case 4 ... 5:
                 timeFare = 0; //noramalhours
+                break;
+            case 6 ... 8:
+                timeFare = 1; //lunchhours
+                break;
+            case 8 ... 10:
+                timefare = 0; //normalhours
                 break;
             case 11 ... 13:
                 timeFare = 1; //rushhour
