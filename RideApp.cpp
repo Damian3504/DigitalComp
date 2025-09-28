@@ -64,5 +64,15 @@ int main()
                 return 0;
         }
 
+        //receipt
+        cout << "\n========= Trip Receipt =========\n";
+        cout << "Passenger Name   : " << name << endl;
+        cout << "Pickup Location  : " << pickupLocation << endl;
+        cout << "Drop-off Location: " << dropoffLocation << endl;
+        cout << "Distance         : " << distance << " km\n";
+        cout << "Ride Type        : " << (rideChoice == 1 ? "RideCar" : "RidePremium") << endl;
+        cout << "Total Fare       : RM " << fare << endl;
+        cout << "===============================\n";
+
 }
 
