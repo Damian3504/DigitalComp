@@ -5,8 +5,8 @@ using namespace std;
 int main() 
 {
     string name, pickupLocation, dropoffLocation;
-    int rideChoice, menuChoice;
-    double distance, fare;
+    int rideChoice, menuChoice, timeChoice;
+    double distance, fare, timeFare;
 
     //base fare and per km rates for different ride types
     const double BASE_FARE_CAR = 5.0;
@@ -34,6 +34,27 @@ int main()
         cout << "Enter Drop-off Location: ";
         getline(cin, dropoffLocation);
 
+        //ride time choices
+        cout << "\nSelect Pickup Time:\n";
+        cout << "1. 7AM\n";
+        cout << "2. 8AM\n";
+        cout << "3. 9AM\n";
+        cout << "4. 10AM\n";
+        cout << "5. 11AM\n";
+        cout << "6. 12PM\n";
+        cout << "7. 1PM\n";
+        cout << "8. 2PM\n";
+        cout << "9. 3PM\n";
+        cout << "10. 4PM\n";
+        cout << "11. 5PM\n";
+        cout << "12. 6PM\n";
+        cout << "13. 7PM\n";
+        cout << "14. 8PM\n";
+        cout << "15. 9PM\n";
+        cout << "16. 10PM\n";
+        cout << "Enter choice (1-2): ";
+        cin >> timeChoice;
+
         //ride type choices
         cout << "\nSelect Ride Type:\n";
         cout << "1. RideCar (Base RM5 + RM2/km)\n";
@@ -51,13 +72,33 @@ int main()
             return 0;
         }
 
+        //calculate fare multiplier based on ride time
+        switch (timeChoice) {
+            case 1 ... 3: //morningpeakhours
+                timeFare = 1;
+                break;
+            case 4 ... 10:
+                timeFare = 0; //noramalhours
+                break;
+            case 11 ... 13:
+                timeFare = 1; //rushhour
+                break;
+            case 14 ... 16:
+                timeFare = 0.5; //afterhours
+                break;
+
+            default:
+                cout << "\nInvalid ride type selected!\n";
+                return 0;
+        }
+
         //calculate fare based on ride type
         switch (rideChoice) {
             case 1: //RideCar
-                fare = BASE_FARE_CAR + (RATE_PER_KM_CAR * distance);
+                fare = BASE_FARE_CAR + ((RATE_PER_KM_CAR+timeFare) * distance);
                 break;
             case 2: //RidePremium
-                fare = BASE_FARE_PREMIUM + (RATE_PER_KM_PREMIUM * distance);
+                fare = BASE_FARE_PREMIUM + ((RATE_PER_KM_PREMIUM+timeFare) * distance);
                 break;
             default:
                 cout << "\nInvalid ride type selected!\n";
